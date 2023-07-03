@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlanSaleWithAddon", "PlanSaleWithAddon.csproj", "{F771D897-D67B-47C1-B3AB-39E679AF560D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F771D897-D67B-47C1-B3AB-39E679AF560D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F771D897-D67B-47C1-B3AB-39E679AF560D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F771D897-D67B-47C1-B3AB-39E679AF560D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F771D897-D67B-47C1-B3AB-39E679AF560D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74CFC7EB-4476-4607-9FDA-1358C9802A4C}
+	EndGlobalSection
+EndGlobal
