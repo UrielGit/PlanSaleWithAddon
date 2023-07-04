@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace PlanSaleWithAddon.Repositories.Interfaces
+namespace PlanSaleWithAddon.Repositories._Interfaces
 {
     public interface IBaseRepository<TEntity> where TEntity : class
     {

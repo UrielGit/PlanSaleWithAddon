@@ -11,7 +11,7 @@
         #region Entidade Associativa
 
         public int PlanoId { get; set; }
-        public Plano Plano { get; set; }
+        public virtual Plano Plano { get; set; }
         #endregion
 
         protected Pessoa() { }
@@ -29,6 +29,13 @@
             Nome = nome;
             Email = email;
             Telefone = telefone;
+        }
+
+        public void Alterar (Pessoa pessoa)
+        {
+            Nome = pessoa.Nome;
+            Email = pessoa.Email;
+            Telefone = pessoa.Telefone;
         }
 
         public void VincularPlano(int planoId)

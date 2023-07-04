@@ -14,10 +14,10 @@ namespace PlanSaleWithAddon.Entities
         #region Entidade Associativa
 
         //Propriedade virtual associativa 1:1
-        public Pessoa Pessoa { get; set; }
+        public virtual Pessoa Pessoa { get; set; }
 
         //Propriedade virtual associativa 1:N
-        public List<Addon> Addons { get; set; }
+        public virtual List<Addon> Addons { get; set; }
 
         #endregion
 
@@ -38,12 +38,25 @@ namespace PlanSaleWithAddon.Entities
             ValorTotal = valorTotal;
         }
 
+        public void Alterar(Plano plano)
+        {
+            TipoPlano = plano.TipoPlano;
+            Anual = plano.Anual;
+            ValorTotal = plano.ValorTotal;
+
+            VincularAddons(plano.Addons);
+
+            VincularPessoa(plano.Pessoa);
+        }
+
         public void VincularAddons(List<Addon> addon)
         {
-            if (addon.Any())
-                Addons.AddRange(addon);
-            else
+            if (!addon.Any()) return;
+
+            if (Addons == null)
                 Addons = new List<Addon>();
+
+            Addons.AddRange(addon);
 
         }
 

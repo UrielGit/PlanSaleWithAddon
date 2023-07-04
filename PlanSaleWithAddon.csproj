@@ -20,13 +20,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\Addon\" />
-    <Folder Include="Repositories\_Interfaces\Addon\" />
-    <Folder Include="Repositories\_Interfaces\Pessoa\" />
-    <Folder Include="Repositories\_Interfaces\Plano\" />
-    <Folder Include="Repositories\Plano\" />
-    <Folder Include="Repositories\Pessoa\" />
-  </ItemGroup>
-
 </Project>

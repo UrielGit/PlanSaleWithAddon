@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PlanSaleWithAddon.Entities;
 
-namespace PlanSaleWithAddon.Entities.EntitiesConfig
+namespace PlanSaleWithAddon.EFCore.EntitiesConfig
 {
     public class UserConfig : IEntityTypeConfiguration<User>
     {
 
-        public void Configure(EntityTypeBuilder<User> builder) 
+        public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("User");
             builder.HasKey(x => x.Id);

@@ -32,8 +32,7 @@ namespace PlanSaleWithAddon.Controllers
             _configuration = configuration;
         }
 
-        [HttpPost]
-        [Route("nova-conta")]
+        [HttpPost("nova-conta")]
         public async Task<IActionResult> Registrar(RegisterViewModel model)
         {
             if (!ModelState.IsValid) 

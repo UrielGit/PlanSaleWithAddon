@@ -1,4 +1,3 @@
-using PlanSaleWithAddon.Context;
 using PlanSaleWithAddon.JWT;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -8,10 +7,18 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Serialization;
+using PlanSaleWithAddon.EFCore.Context;
+using PlanSaleWithAddon.Repositories._Interfaces;
+using PlanSaleWithAddon.Repositories;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddScoped<IAddonRepository, AddonRepository>();
+builder.Services.AddScoped<IPlanoRepository, PlanoRepository>();
+builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
 
 builder.Services.AddControllers()
     .AddXmlSerializerFormatters()

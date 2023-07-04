@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace PlanSaleWithAddon.Context
+namespace PlanSaleWithAddon.EFCore.Context
 {
     public class AppDbContext : IdentityDbContext<IdentityUser>
     {

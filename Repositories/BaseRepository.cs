@@ -1,7 +1,7 @@
-﻿using PlanSaleWithAddon.Context;
-using PlanSaleWithAddon.Repositories.Interfaces;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using PlanSaleWithAddon.EFCore.Context;
+using PlanSaleWithAddon.Repositories._Interfaces;
 
 namespace PlanSaleWithAddon.Repositories
 {
@@ -16,23 +16,23 @@ namespace PlanSaleWithAddon.Repositories
             _dbSet = context.Set<TEntity>();
         }
 
-        public void Add(TEntity entity)
+        public virtual void Add(TEntity entity)
         {
             _dbSet.Add(entity);
-            _appDbContext.SaveChanges();
+
         }
 
-        public void Delete(TEntity entity)
+        public virtual void Delete(TEntity entity)
         {
             _dbSet.Remove(entity);
-            _appDbContext.SaveChanges();
+            
         }
 
-        public void DeleteById(object id)
+        public virtual void DeleteById(object id)
         {
             var entity = GetById(id);
             _dbSet.Remove(entity);
-            _appDbContext.SaveChanges();
+            
         }
 
         public void Dispose()
@@ -40,11 +40,11 @@ namespace PlanSaleWithAddon.Repositories
             _appDbContext.Dispose();
         }
 
-        public void Edit(TEntity entity)
+        public virtual void Edit(TEntity entity)
         {
             _dbSet.Attach(entity);
             _appDbContext.Entry(entity).State = EntityState.Modified;
-            _appDbContext.SaveChanges(true);
+            
         }
 
         public TEntity Exists(Expression<Func<TEntity, bool>> predicate)
@@ -52,12 +52,12 @@ namespace PlanSaleWithAddon.Repositories
             return _dbSet.FirstOrDefault(predicate);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return _dbSet.ToList();
         }
 
-        public TEntity GetById(object id)
+        public virtual TEntity GetById(object id)
         {
             return _dbSet.Find(id);
         }

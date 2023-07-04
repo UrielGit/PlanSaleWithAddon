@@ -1,4 +1,5 @@
 ﻿using PlanSaleWithAddon.Entities.ValueObjects;
+using System.Drawing;
 
 namespace PlanSaleWithAddon.Entities
 {
@@ -29,6 +30,11 @@ namespace PlanSaleWithAddon.Entities
             Valor = valor;
         }
 
+        public void Alterar(Addon addon)
+        {
+            TipoAddon = addon.TipoAddon;
+            Valor = addon.Valor;
+        }
 
     }
 
