@@ -114,7 +114,7 @@ namespace PlanSaleWithAddon.Controllers
             }
             else
             {
-                return NotFound(new { Status = ResponseCodes.NotFound.GetDisplayName(), 
+                return Unauthorized(new { Status = ResponseCodes.Unauthorized.GetDisplayName(), 
                                       StatusCode = ResponseCodes.Unauthorized, 
                                       Message = "Usuário ou senha inválido." });
             }
