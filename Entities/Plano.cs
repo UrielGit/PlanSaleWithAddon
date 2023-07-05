@@ -33,6 +33,8 @@ namespace PlanSaleWithAddon.Entities
 
         public Plano(TipoPlano tipoPlano, bool anual, decimal valorTotal)
         {
+            valorTotal = CalculaValorTotalPlano(tipoPlano, anual);
+
             TipoPlano = tipoPlano;
             Anual = anual;
             ValorTotal = valorTotal;
@@ -67,6 +69,26 @@ namespace PlanSaleWithAddon.Entities
             pessoa.VincularPlano(Id);
 
             Pessoa = pessoa;
+        }
+
+        public decimal CalculaValorTotalPlano(TipoPlano tipoPlano, bool anual)
+        {
+            var valorPlano = 0M;
+
+            switch (tipoPlano)
+            {
+                case TipoPlano.Arcade:
+                    valorPlano = 4.86M * 9;
+                    break;
+                case TipoPlano.Advanced:
+                    valorPlano = 4.86M * 12;
+                    break;
+                case TipoPlano.Pro:
+                    valorPlano = 4.86M * 15;
+                    break;
+            }
+
+            return anual ? valorPlano * 12 : valorPlano;
         }
 
     }
