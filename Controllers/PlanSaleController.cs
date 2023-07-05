@@ -36,7 +36,7 @@ namespace PlanSaleWithAddon.Controllers
             
             var plano = new Plano(EnumPlanoValidation(model.TipoPlano), model.Anual, model.ValorTotal);
 
-            model.Addons = model.AddonsBuy != null ? EnumAddonValidation(model.AddonsBuy) : new List<AddonViewModel>();
+            model.Addons = model.AddonsComprados != null ? EnumAddonValidation(model.AddonsComprados) : new List<AddonViewModel>();
 
             if (model.Addons != null && model.Addons.Any())
                 plano.Addons = model.Addons.Select(vm => new Addon(vm.TipoAddon, vm.Valor)).ToList();
@@ -48,7 +48,7 @@ namespace PlanSaleWithAddon.Controllers
                 model.Telefone,
                 model.Email);
 
-            _planoRepository.AddWithPessoa(plano, pessoa);
+            var returnResult = _planoRepository.AddWithPessoa(plano, pessoa);
 
             return Ok(new
             {

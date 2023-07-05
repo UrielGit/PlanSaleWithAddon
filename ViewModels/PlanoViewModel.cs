@@ -33,7 +33,7 @@ namespace PlanSaleWithAddon.ViewModels
         // Associação
         //public PessoaViewModel Pessoa { get; set; }
 
-        public string[]? AddonsBuy { get; set; }
+        public string[]? AddonsComprados { get; set; }
         public List<AddonViewModel>? Addons { get; set; }
 
     }
